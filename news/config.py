@@ -44,7 +44,8 @@ queries = {
            WHERE path != '/'
            GROUP BY path) AS t
         WHERE articles.slug = substring(t.path FROM 10)
-        ORDER BY t.num DESC;
+        ORDER BY t.num DESC
+        LIMIT 3;
     """,
     "2": """
         SELECT
